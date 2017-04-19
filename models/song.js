@@ -15,6 +15,14 @@ const Song = bookshelf.Model.extend(
         .fetchAll()
         .then( rows => rows)
         .catch( err => err)
+    },
+    getSingleSong: function(id) {
+      console.log(`retrieving single song from Song table`)
+      return this.forge()
+        .query({where:{ SongId: id }})
+        .fetch()
+        .then( rows => rows)
+        .catch( err => err)
     }
   }
 )

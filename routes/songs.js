@@ -5,9 +5,10 @@
 const Router = require('express')
 const router = Router()
 
-const { getAllSongs } = require('../controllers/songCtrl')
+const { getAllSongs, getSingleSong } = require('../controllers/songCtrl')
 
 router.get('/songs', getAllSongs)
+router.get('/songs/:id', getSingleSong)
 
 module.exports = router
 
