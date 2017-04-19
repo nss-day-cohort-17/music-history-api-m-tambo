@@ -12,7 +12,7 @@ app.use('/api/v1/', routes)
 
 // <catch any undefined routes with a 404 middleware>
 app.use((err, req, res, next) => {
-  console.log(`first middleware:`)
+  console.log(`sample middleware:`)
   next(err)
 })
 
