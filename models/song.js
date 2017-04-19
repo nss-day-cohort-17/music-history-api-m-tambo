@@ -27,9 +27,14 @@ const Song = bookshelf.Model.extend(
     addSong: function(body) {
       console.log(`adding song to database`)
       return this.forge(body)
-        // body.Title, body.SongLength, body.ReleaseDate, body.GenreId, body.ArtistId, body.AlbumId
         .save()
         .catch( err => err)
+    },
+    deleteSong: function(id) {
+      return this.forge()
+        .query({where:{ SongId: id}})
+        .destroy()
+        .catch(err => err)
     }
   }
 )

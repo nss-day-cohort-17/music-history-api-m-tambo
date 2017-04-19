@@ -17,23 +17,20 @@ const getSingleSong = (req, res, next) => {
 
 const addSong = ({body}, res, next) => {
   console.log("body:", body)
-  Song.forge(body)
-  .save()
-  .then( () => res.status(201).json({"msg": "Great job, you posted a new song"}))
-  .catch( (error) => {
-    next(error)
-  })
+  Song.addSong(body)
+    .then(() => res.status(200).json({"msg": "New song added to database"}))
 }
 
-// const addSong = ({body}, res, next) => {
-//   Song.addSong(body)
-//     .then(() => res.status(200).json({"msg": "New song added to database"}))
-// }
+const deleteSong = (req, res, next) => {
+  Song.deleteSong(req.params.id)
+    .then( () => res.status(201).json({"msg": "Great job, you deleted a song"}))
+}
 
 module.exports = {
   getAllSongs,
   getSingleSong,
-  addSong
+  addSong,
+  deleteSong
 }
 
 

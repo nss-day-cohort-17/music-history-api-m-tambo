@@ -5,13 +5,13 @@
 const Router = require('express')
 const router = Router()
 
-const { getAllSongs, getSingleSong, addSong } = require('../controllers/songCtrl')
-
-router.get('/songs', getAllSongs)
-router.get('/songs/:id', getSingleSong)
-router.post('/songs/new', addSong)
-
-module.exports = router
+const { getAllSongs, getSingleSong, addSong, deleteSong } = require('../controllers/songCtrl')
 
 // <define routes for getting all songs and a single song>
-// <stretch: define routes for posting, deleting, editing a song>
+router.get('/songs', getAllSongs)
+router.get('/songs/:id', getSingleSong)
+// <define routes for posting, deleting, editing a song>
+router.post('/songs/new', addSong)
+router.delete('/songs/delete/:id', deleteSong)
+
+module.exports = router
