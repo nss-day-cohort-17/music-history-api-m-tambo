@@ -22,5 +22,17 @@
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
     "mocha": "^2.4.5"
-  }
+  },
+  "description": "Try your hand at building an API for an existing database. Included in this project is the music history db you worked with back in the first milestone. You will setup your API to query the db and return JSON representations of the data to the client. It will require a slightly different setup from the TV Shows project we live coded, the most obvious thing being a lack of need to create migrations, since the db and tables already exist.",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nss-day-cohort-17/music-history-api-m-tambo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nss-day-cohort-17/music-history-api-m-tambo/issues"
+  },
+  "homepage": "https://github.com/nss-day-cohort-17/music-history-api-m-tambo#readme"
 }
