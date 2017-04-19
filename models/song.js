@@ -23,6 +23,13 @@ const Song = bookshelf.Model.extend(
         .fetch()
         .then( rows => rows)
         .catch( err => err)
+    },
+    addSong: function(body) {
+      console.log(`adding song to database`)
+      return this.forge(body)
+        // body.Title, body.SongLength, body.ReleaseDate, body.GenreId, body.ArtistId, body.AlbumId
+        .save()
+        .catch( err => err)
     }
   }
 )

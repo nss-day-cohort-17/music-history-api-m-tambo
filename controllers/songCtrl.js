@@ -15,9 +15,25 @@ const getSingleSong = (req, res, next) => {
     .then((song) => res.status(200).json(song))
 }
 
+const addSong = ({body}, res, next) => {
+  console.log("body:", body)
+  Song.forge(body)
+  .save()
+  .then( () => res.status(201).json({"msg": "Great job, you posted a new song"}))
+  .catch( (error) => {
+    next(error)
+  })
+}
+
+// const addSong = ({body}, res, next) => {
+//   Song.addSong(body)
+//     .then(() => res.status(200).json({"msg": "New song added to database"}))
+// }
+
 module.exports = {
   getAllSongs,
-  getSingleSong
+  getSingleSong,
+  addSong
 }
 
 
