@@ -7,6 +7,9 @@ let app = express();
 // <Include the router index file>
 const routes = require('./routes/')
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+
 // <Setup your routes middleware>
 app.use('/api/v1/', routes)
 
